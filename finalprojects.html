@@ -26,37 +26,181 @@
     </script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMwYbU5tgheDwzUtKQEUz_TBz-DU2GlTg&callback=initMap">
-    </script>
-  </body>
-</html>
-<!DOCTYPE html>
-<html>
-  <head>
-    <style>
-       #map {
-        height: 400px;
-        width: 100%;
-       }
-    </style>
-  </head>
-  <body>
-    <h3>My Google Maps</h3>
-    <div id="map"></div>
+      
+      
+   <!--list of bathrooms-->
+    <div id="id01"></div>
     <script>
-      function initMap() {
-        var uluru = {lat:37.3603, lng:-122.1266};
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 8,
-          center: uluru
-        });
-        var marker = new google.maps.Marker({
-          position: uluru,
-          map: map
-        });
-      }
+    var myArray = [
+    {
+      "id": 31630,
+      "name": "199 Almond Ave, Los Altos, CA 94022, USA",
+      "street": "199 Almond Ave",
+      "city": "Los Altos",
+      "state": "California",
+      "accessible": true,
+      "unisex": true,
+      "directions": "By the lockers that border the teacher parking lot, 300s?",
+      "comment": "",
+      "latitude": 37.3850834,
+      "longitude": -122.1087546,
+      "created_at": "2017-02-27T20:52:02.180Z",
+      "updated_at": "2017-02-27T20:52:02.180Z",
+      "downvote": 0,
+      "upvote": 0,
+      "country": "US",
+      "changing_table": false
+    },
+    {
+      "id": 25397,
+      "name": "20-136 1st St, Los Altos, CA 94022, USA",
+      "street": "20-136 1st St",
+      "city": "Los Altos",
+      "state": "California",
+      "accessible": true,
+      "unisex": true,
+      "directions": "When you enter its towards the back to the right",
+      "comment": "You need to ask the staff for a key. Also it will say staff only but everyone can use it",
+      "latitude": 37.3811563,
+      "longitude": -122.1206689,
+      "created_at": "2016-09-07T23:45:17.340Z",
+      "updated_at": "2016-09-07T23:45:17.340Z",
+      "downvote": 0,
+      "upvote": 0,
+      "country": "US",
+      "changing_table": false
+    },
+    {
+      "id": 1610,
+      "name": "Subway @ Sparks Crossing",
+      "street": "287 Los Altos Pkwy",
+      "city": "Sparks",
+      "state": "NV",
+      "accessible": false,
+      "unisex": true,
+      "directions": "Walk straight to the back of the store",
+      "comment": null,
+      "latitude": 39.584866,
+      "longitude": -119.738162,
+      "created_at": "2014-02-02T20:51:19.932Z",
+      "updated_at": "2014-02-02T20:51:19.932Z",
+      "downvote": 1,
+      "upvote": 0,
+      "country": "US",
+      "changing_table": false
+    },
+    {
+      "id": 16996,
+      "name": "Starbucks",
+      "street": "296 Main St",
+      "city": "Los Altos",
+      "state": "CA",
+      "accessible": true,
+      "unisex": true,
+      "directions": "Straight back to the corner if you keep walking along the wall on your left after you walk in the door.",
+      "comment": "If the door's locked, it just means someone is in there; you don't need a key.",
+      "latitude": 37.3785098,
+      "longitude": -122.1166941,
+      "created_at": "2015-04-01T21:45:38.500Z",
+      "updated_at": "2015-04-01T21:45:38.500Z",
+      "downvote": 0,
+      "upvote": 0,
+      "country": "US",
+      "changing_table": false
+    },
+    {
+      "id": 17589,
+      "name": "A Good Morning Cafe",
+      "street": "4546 El Camino Real, #A1",
+      "city": "Los Altos",
+      "state": "CA",
+      "accessible": true,
+      "unisex": true,
+      "directions": "Bathroom in the back ",
+      "comment": "",
+      "latitude": 37.4006814,
+      "longitude": -122.1146171,
+      "created_at": "2015-05-30T21:05:50.607Z",
+      "updated_at": "2015-05-30T21:05:50.607Z",
+      "downvote": 0,
+      "upvote": 1,
+      "country": "US",
+      "changing_table": false
+    },
+    {
+      "id": 18806,
+      "name": "Peet's Coffee",
+      "street": "4598 El Camino Real",
+      "city": "Los Altos",
+      "state": "CA",
+      "accessible": true,
+      "unisex": false,
+      "directions": "Can't speak for the men's, but the women's restroom is single occupancy, accessible, in the back. No key or code required.",
+      "comment": "",
+      "latitude": 37.400703,
+      "longitude": -122.1132299,
+      "created_at": "2015-09-20T20:03:50.014Z",
+      "updated_at": "2015-09-20T20:03:50.014Z",
+      "downvote": 0,
+      "upvote": 0,
+      "country": "US",
+      "changing_table": false
+    },
+    {
+      "id": 19050,
+      "name": "Foothill College",
+      "street": "12345 El Monte Rd",
+      "city": "Los Altos Hills",
+      "state": "CA",
+      "accessible": true,
+      "unisex": true,
+      "directions": "One gender neutral bathroom in 2200. Two bathrooms inside 1900 and two in 4400.",
+      "comment": "",
+      "latitude": 37.3609321,
+      "longitude": -122.1270268,
+      "created_at": "2015-10-22T17:58:00.120Z",
+      "updated_at": "2015-10-22T17:58:00.120Z",
+      "downvote": 0,
+      "upvote": 0,
+      "country": "US",
+      "changing_table": false
+    },
+    {
+      "id": 25252,
+      "name": "Sumo Sushi Boats",
+      "street": "355 State Street",
+      "city": "Los Altos",
+      "state": "California",
+      "accessible": true,
+      "unisex": false,
+      "directions": "In the back, make a right at the curtains. ",
+      "comment": "",
+      "latitude": 37.378822,
+      "longitude": -122.1176327,
+      "created_at": "2016-09-02T20:51:39.669Z",
+      "updated_at": "2016-09-02T20:51:39.669Z",
+      "downvote": 0,
+      "upvote": 0,
+      "country": "US",
+      "changing_table": false
+    }
+  ];
+
+
+    function myFunction(arr) {
+        var out = "";
+        var i;
+        for(i = 0; i < arr.length; i++) {
+            out += arr[i].name +"   :   " + arr[i].latitude + " , "+arr[i].longitude+ '</a><br>';
+        }
+        document.getElementById("id01").innerHTML = out;
+    }
+
+    myFunction(myArray);
     </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMwYbU5tgheDwzUtKQEUz_TBz-DU2GlTg&callback=initMap">
+      
+      
+      
     </script>
   </body>
 </html>
