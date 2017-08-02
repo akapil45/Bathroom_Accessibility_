@@ -7,17 +7,20 @@
         width: 100%;
        }
     </style>
+    <script src="bathroomList.js"></script>
   </head>
+  
   <body onload = "addMarker()">
+    document.body.onload = listout(bathrooms)
+    
     <h3>My Google Maps</h3>
     <div id="map" ></div>
     <div id="id01"></div>
 
-    <div id="id01"></div>
-
-    <script src="bathroomList.js"></script>
+    
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMwYbU5tgheDwzUtKQEUz_TBz-DU2GlTg&callback=initMap">
     </script>
   </body>
+  
 </html>
