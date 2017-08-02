@@ -2,11 +2,10 @@
    var x = document.getElementById("demo");
    var latitude1 = 0;
    var longitude1 = 0;
-   getInitialLocation();
    function setLocation() {
        if(!isNaN(document.getElementById("userInput").value) && !isNaN(document.getElementById("userInput2").value)) {
-         latitude1 = parseInt(document.getElementById("userInput").value);
-         longitude1 = parseInt(document.getElementById("userInput2").value);
+         latitude1 = parseFloat(document.getElementById("userInput").value);
+         longitude1 = parseFloat(document.getElementById("userInput2").value);
          initMap();
        }
        else {
@@ -34,23 +33,19 @@ var longitudeArray = [];
 var nameArray = [];
 
   function listOut() {
-    var out = "<dir><h4>List of available bathrooms</h4>";
     for(var i = 0; i < bathrooms.length; i++) {
       var lat1 = bathrooms[i].latitude;
       var long1 = bathrooms[i].longitude;
       var name1 = bathrooms[i].name;
       var count = i + 1;
-        out += count + ".  " + name1 +"   :   " + lat1 + " , "+long1+ '</a><br>';
         latitudeArray[latitudeArray.length] = lat1;
         longitudeArray[longitudeArray.length] = long1;
         nameArray[nameArray.length] = name1;
     }
-    document.getElementById("id01").innerHTML = out;
   }
 
 function initMap() {
     listOut();
-    alert("Hello");
     var uluru = {lat:latitude1, lng:longitude1};
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 16,
@@ -62,7 +57,7 @@ function initMap() {
         icon: 'blue_markerA.png'
       });
     var infoWindow = new google.maps.InfoWindow({
-      content: '<h1>Your location: </h1>'
+      content: 'Your location'
     });
     marker.addListener('click', function() {
       infoWindow.open(map, marker);
@@ -75,22 +70,27 @@ function initMap() {
         position: one,
         map: map
       });
+      createInfoWindow(nameArray[i],markers[i], i);
     }
 
-    for (var s = 0; s < bathrooms.length; s++) {
-      var location = bathrooms[s].name;
+}
+function createInfoWindow(name,marker2, s) {
       var street = bathrooms[s].street;
       var city = bathrooms[s].city;
       var state = bathrooms[s].state;
-      //alert(location + " " + street + " " + city + " " + state);
-      var infoWindow = new google.maps.InfoWindow({
-          content: location
-   });
-   var x = markers[0];
-      x.addListener('click', function(){
-        infoWindow.open(map, x);
-     });
-
-  }
+      if(bathrooms[s].unisex == false)  unisex = "no";
+      else  unisex = "YES!";
+      if(bathrooms[s].accessible == false)  accessible = "no";
+      else  accessible = "YES!";
+      if(bathrooms[s].changing_table == false)  changing_table = "no";
+      else  changing_table = "YES!";
+    var infoWindow = new google.maps.InfoWindow({
+      content: name + "<br>" + street + " " + city + " " + state +
+               "<br>Unisex: " + unisex + "<br>Wheelchair-Accessible: " +
+               accessible + "<br>Changing tables available: " + changing_table
+    });
+    marker2.addListener('click', function() {
+      infoWindow.open(map, marker2);
+    });
 
 }
