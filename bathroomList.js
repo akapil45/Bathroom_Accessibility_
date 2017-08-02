@@ -4163,5 +4163,24 @@ var bathrooms = [
     "upvote": 1,
     "country": "US",
     "changing_table": false
-  }  
+  },
+  {
+    "id": 35736,
+    "name": "Kiwanis Thrift Shop - Anacortes",
+    "street": "420 O Ave ",
+    "city": "Anacortes",
+    "state": "WA",
+    "accessible": true,
+    "unisex": true,
+    "directions": "To the right of the main entrance, in a corner (may need to go around some shelves and stuff).",
+    "comment": "The changing table is a folded table, which can be set up with a bit of effort (might need to ask for help if you can't set it up). The sign doesn't have the accessible symbol, but it appears to be - just be aware.",
+    "latitude": 48.5185775,
+    "longitude": -122.6143037,
+    "created_at": "2017-06-13T20:02:13.788Z",
+    "updated_at": "2017-06-13T20:02:13.788Z",
+    "downvote": 0,
+    "upvote": 0,
+    "country": "US",
+    "changing_table": true
+  }
 ];
