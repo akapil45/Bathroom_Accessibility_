@@ -2,7 +2,6 @@
    var x = document.getElementById("demo");
    var latitude1 = 0;
    var longitude1 = 0;
-   getInitialLocation();
    function setLocation() {
        if(!isNaN(document.getElementById("userInput").value) && !isNaN(document.getElementById("userInput2").value)) {
          latitude1 = parseInt(document.getElementById("userInput").value);
@@ -34,18 +33,15 @@ var longitudeArray = [];
 var nameArray = [];
 
   function listOut() {
-    var out = "<dir><h4>List of available bathrooms</h4>";
     for(var i = 0; i < bathrooms.length; i++) {
       var lat1 = bathrooms[i].latitude;
       var long1 = bathrooms[i].longitude;
       var name1 = bathrooms[i].name;
       var count = i + 1;
-        out += count + ".  " + name1 +"   :   " + lat1 + " , "+long1+ '</a><br>';
         latitudeArray[latitudeArray.length] = lat1;
         longitudeArray[longitudeArray.length] = long1;
         nameArray[nameArray.length] = name1;
     }
-    document.getElementById("id01").innerHTML = out;
   }
 
 function initMap() {
