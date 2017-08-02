@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+       #map {
+        height: 400px;
+        width: 100%;
+       }
+    </style>
+  </head>
+  <body onload = "initMap">
+    <h3>My Google Maps</h3>
+    <form id="form" onsubmit="return false;">
+        <input style="position:absolute; top:3%; left:15%; width:20%;" type="text" id="userInput" name = "Hello" value = "Enter the latitude" />
+        <input style="position:absolute; top:3%; left:35%; width:20%;" type="text" id="userInput2" value = "Enter the longitude" />
+        <input style="position:absolute; top:3%; left:55%; width:10%;" type="submit" onclick="setLocation()" />
+    </form>
+    <p id="demo"></p>
+    <div id="map" ></div>
+
+    <div id="id01"></div>
+
+    <script src="bathroomList.js"></script>
+    <script src="bathroom_map.js"></script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMwYbU5tgheDwzUtKQEUz_TBz-DU2GlTg&callback=initMap">
+    </script>
+  </body>
+</html>
