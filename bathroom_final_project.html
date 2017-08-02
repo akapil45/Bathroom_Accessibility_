@@ -1,23 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>Bathroom Accessibility</title>
     <style>
        #map {
         height: 400px;
         width: 100%;
        }
     </style>
-    
-    <!--sourcing in__>
-    <script src="bathroomList.js"></script>
-    <script src="bathroom_map.js"></script>
-    <script src= "functions.js"></script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMwYbU5tgheDwzUtKQEUz_TBz-DU2GlTg&callback=initMap">
-    </script>
-
   </head>
-  <body onload = "initMap">
+  <body onload = "getInitialLocation()">
     <h3>My Google Maps</h3>
     <form id="form" onsubmit="return false;">
         <input style="position:absolute; top:3%; left:15%; width:20%;" type="text" id="userInput" name = "Hello" value = "Enter the latitude" />
@@ -27,12 +19,11 @@
     <p id="demo"></p>
     <div id="map" ></div>
 
-    <div id="id01"></div>
-
     <script src="bathroomList.js"></script>
     <script src="bathroom_map.js"></script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMwYbU5tgheDwzUtKQEUz_TBz-DU2GlTg&callback=initMap">
     </script>
+    <dir><a href="ListOfBathrooms.html">Check out the list of bathrooms in our database!</a></dir>
   </body>
 </html>
