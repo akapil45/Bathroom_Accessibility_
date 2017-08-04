@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>bathroom</title>
     <script src="functions.js"></script>
+    <script src="bathroomList.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -34,55 +35,53 @@
         $('input[type="checkbox"]').click(function(){
             if($(this).is(":checked")){
               if(document.getElementById("unisex").checked == true && document.getElementById("accessible").checked == true && document.getElementById("changing_table").checked == true) {
-                        showBathroomWithAll(bathrooms);
+                        printBathroomWithAll(bathrooms);
                   }
               else if(document.getElementById("unisex").checked == true && document.getElementById("accessible").checked == true) {
-                        showUnisex_Accessible(bathrooms);
+                        printUnisex_Accessible(bathrooms);
                   }
               else if(document.getElementById("accessible").checked == true && document.getElementById("changing_table").checked == true ) {
-                        showAccessible_ChangingTable(bathrooms);
+                        printAccessible_ChangingTable(bathrooms);
                   }
               else if(document.getElementById("unisex").checked == true && document.getElementById("changing_table").checked == true) {
-                        showUnisex_ChangingTable(bathrooms);
+                        printUnisex_ChangingTable(bathrooms);
                       }
               else if(document.getElementById("unisex").checked == true) {
-                  showUnisex(bathrooms);
+                  printUnisex(bathrooms);
                 }
               else if(document.getElementById("accessible").checked == true) {
-                   showAccessible(bathrooms);
+                   printAccessible(bathrooms);
                  }
               else if(document.getElementById("changing_table").checked == true) {
-                    showChangingTable(bathrooms);
+                    printChangingTable(bathrooms);
                   }
               }
-
             else if($(this).is(":not(:checked)")){
               if (document.getElementById("accessible").checked == true &&
               document.getElementById("changing_table").checked == true){
-                showAccessible_ChangingTable(bathrooms);
+                printAccessible_ChangingTable(bathrooms);
               }
               else if (document.getElementById("accessible").checked == true &&
               document.getElementById("unisex").checked == true){
-                showUnisex_Accessible(bathrooms);
+                printUnisex_Accessible(bathrooms);
               }
               else if (document.getElementById("unisex").checked == true &&
               document.getElementById("changing_table").checked == true){
-                showUnisex_ChangingTable(bathrooms);
+                printUnisex_ChangingTable(bathrooms);
               }
               else if (document.getElementById("accessible").checked == true){
-                showAccessible(bathrooms);
+                printAccessible(bathrooms);
               }
               else if (document.getElementById("unisex").checked == true){
-                showUnisex(bathrooms);
+                printUnisex(bathrooms);
               }
               else if (document.getElementById("changing_table").checked == true){
-                showChangingTable(bathrooms);
+                printChangingTable(bathrooms);
               }
               else {
                 listout(bathrooms);
               }
             }
-
         });
     });
     </script>
