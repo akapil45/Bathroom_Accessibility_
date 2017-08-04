@@ -46,7 +46,7 @@ function initMap(bathroomArray) {
     listOut();
     var uluru = {lat:latitude1, lng:longitude1};
     var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 8,
+        zoom: 12,
         center: uluru
     });
     var marker = new google.maps.Marker({
@@ -63,7 +63,7 @@ function initMap(bathroomArray) {
 
     var markers = [];
     for (var i = 0; i < bathroomArray.length; i++) {
-      var one = {lat: bathroomArray[i].latitude, lng: bathroomArray[i].longitude}
+      var one = {lat: bathroomArray[i].latitude, lng:bathroomArray[i].longitude}
       markers[i] = new google.maps.Marker({
         position: one,
         map: map
@@ -76,16 +76,20 @@ function createInfoWindow(bathroomArray,name,marker2, s) {
       var street = bathroomArray[s].street;
       var city = bathroomArray[s].city;
       var state = bathroomArray[s].state;
-      if(bathroomArray[s].unisex == false)  unisex = "no";
-      else  unisex = "YES!";
-      if(bathroomArray[s].accessible == false)  accessible = "no";
-      else  accessible = "YES!";
-      if(bathroomarray[s].changing_table == false)  changing_table = "no";
-      else  changing_table = "YES!";
+      var unisex1;
+      var accessible1;
+      var changing_table1;
+      if(bathroomArray[s].unisex == false)  unisex1 = "no";
+      else  unisex1 = "YES!";
+      if(bathroomArray[s].accessible == false)  accessible1 = "no";
+      else  accessible1 = "YES!";
+      if(bathroomArray[s].changing_table == false)  changing_table1 = "no";
+      else  changing_table1 = "YES!";
+
     var infoWindow = new google.maps.InfoWindow({
-      content: name + "<br>" + street + " " + city + " " + state +
-               "<br>Unisex: " + unisex + "<br>Wheelchair-Accessible: " +
-               accessible + "<br>Changing tables available: " + changing_table
+      content: name + "<br>" + s + "<br>" + street + " " + city + " " + state +
+               "<br>Unisex: " + unisex1 + "<br>Wheelchair-Accessible: " +
+               accessible1 + "<br>Changing tables available: " + changing_table1
     });
     marker2.addListener('click', function() {
       infoWindow.open(map, marker2);
