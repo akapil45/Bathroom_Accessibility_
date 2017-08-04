@@ -6,7 +6,7 @@
        if(!isNaN(document.getElementById("userInput").value) && !isNaN(document.getElementById("userInput2").value)) {
          latitude1 = parseFloat(document.getElementById("userInput").value);
          longitude1 = parseFloat(document.getElementById("userInput2").value);
-         initMap();
+         initMap(bathrooms);
        }
        else {
            alert('Sorry, "' + document.getElementById("userInput").value + '" and "'
@@ -23,7 +23,7 @@
   function showPosition(position) {
      latitude1 = position.coords.latitude;
      longitude1 = position.coords.longitude;
-     initMap();
+     initMap(bathrooms);
   }
 
 var latitudeArray = [];
@@ -42,7 +42,7 @@ var nameArray = [];
     }
   }
 
-function initMap() {
+function initMap(bathroomArray) {
     listOut();
     var uluru = {lat:latitude1, lng:longitude1};
     var map = new google.maps.Map(document.getElementById('map'), {
@@ -62,25 +62,25 @@ function initMap() {
     });
 
     var markers = [];
-    for (var i = 0; i < latitudeArray.length; i++) {
-      var one = {lat: latitudeArray[i], lng: longitudeArray[i]}
+    for (var i = 0; i < bathroomArray.length; i++) {
+      var one = {lat: bathroomArray[i].latitude, lng: bathroomArray[i].longitude}
       markers[i] = new google.maps.Marker({
         position: one,
         map: map
       });
-      createInfoWindow(nameArray[i],markers[i], i);
+      createInfoWindow(bathroomArray,bathroomArray[i].name,markers[i], i);
     }
 
 }
-function createInfoWindow(name,marker2, s) {
-      var street = bathrooms[s].street;
-      var city = bathrooms[s].city;
-      var state = bathrooms[s].state;
-      if(bathrooms[s].unisex == false)  unisex = "no";
+function createInfoWindow(bathroomArray,name,marker2, s) {
+      var street = bathroomArray[s].street;
+      var city = bathroomArray[s].city;
+      var state = bathroomArray[s].state;
+      if(bathroomArray[s].unisex == false)  unisex = "no";
       else  unisex = "YES!";
-      if(bathrooms[s].accessible == false)  accessible = "no";
+      if(bathroomArray[s].accessible == false)  accessible = "no";
       else  accessible = "YES!";
-      if(bathrooms[s].changing_table == false)  changing_table = "no";
+      if(bathroomarray[s].changing_table == false)  changing_table = "no";
       else  changing_table = "YES!";
     var infoWindow = new google.maps.InfoWindow({
       content: name + "<br>" + street + " " + city + " " + state +
