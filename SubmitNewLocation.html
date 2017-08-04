@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Submit a New Bathroom Location!</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="//maps.googleapis.com/maps/api/js"></script>
+</head>
+<body>
+<div class="container">
+  <h2>Fill in the required fields to create a new bathroom location!</h2>
+  <p>All fields are required!</p>
+  <form>
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" class="form-control" id="name">
+    </div>
+        <div class="form-group">
+          <label for="street">Street:</label>
+          <input type="text" class="form-control" id="street">
+        </div>
+          <div class="form-group">
+            <label for="city">City:</label>
+            <input type="text" class="form-control" id="city">
+        </div>
+          <div class="form-group">
+            <label for="state">State:</label>
+            <input type="text" class="form-control" id="state">
+          </div>
+            <div class="form-group">
+              <label for="country">Country:</label>
+              <input type="text" class="form-control" id="country">
+        </div>
+          <div class="form-group">
+            <label for="lat">Latitude:</label>
+            <input type="text" class="form-control" id="latitude">
+          </div>
+            <div class="form-group">
+              <label for="long">Longitude:</label>
+              <input type="text" class="form-control" id="longitude">
+            </div>
+
+<p>Is this bathroom unisex?</p>
+  <form>
+    <div class="radio">
+      <label><input type="radio" name="unisex_true" id="unisex_true">True</label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" name="unisex_false" id="unisex_false">False</label>
+    </div>
+  </form>
+<p>Is this bathroom wheelchair-accessible?</p>
+  <form>
+    <div class="radio">
+      <label><input type="radio" name="accessible_true" id="accessible_true">True</label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" name="accessible_false" id="accessible_false">False</label>
+    </div>
+  </form>
+<p>Does this bathroom contain diaper-changing stations?</p>
+  <form>
+    <div class="radio">
+      <label><input type="radio" name="changing_true" id="changing_true">True</label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" name="changing_false" id="changing_false">False</label>
+    </div>
+  <div>
+  <button type="submit" input style="position:absolute; left:45%" class="btn btn-success" onclick = "newLocation()">Create a new bathroom!</button>
+</div>
+  </form>
+  <p><br><br><br>(Due to current issues (a lack of a permanent database), we are currently unable to store locations permanently. Sorry for the inconvenience!)<br></p>
+</div>
+<script>
+function newLocation() {
+    var correct = true;
+    var error = "ERROR: \n";
+    var id = 0;
+    var name = document.getElementById("name").value;
+    var street = document.getElementById("street").value;
+    var city = document.getElementById("city").value;
+    var state = document.getElementById("state").value;
+    var country = document.getElementById("country").value;
+    if((name.length === 0 || !name.trim()) && (street.length === 0 || !street.trim())
+        && (city.length === 0 || !city.trim()) && (state.length === 0 || !state.trim())
+        && (country.length === 0 || !country.trim())) {
+           correct = false;
+           error += "Invalid input for name/street/city/state/country\n";
+    }
+
+    var latitude_new;
+    var longitude_new;
+    if(!isNaN(document.getElementById("latitude").value) && !isNaN(document.getElementById("longitude").value)
+        && parseFloat(document.getElementById("latitude").value) <= 90 && parseFloat(document.getElementById("latitude").value) >= -90
+        && parseFloat(document.getElementById("longitude").value) <= 180 && parseFloat(document.getElementById("longitude").value) >= -180) {
+      latitude_new = parseFloat(document.getElementById("latitude").value);
+      longitude_new = parseFloat(document.getElementById("longitude").value);
+    }
+    else {
+      correct = false;
+      error = "Invalid input for latitude/longitude\n";
+    }
+
+    var accessible = "";
+    if (document.getElementById('accessible_true').checked) {
+      accessible = "true";
+    }
+    else if (document.getElementById('accessible_false').checked) {
+      accessible = "false";
+    }
+    else {
+      correct = false;
+      error += "Did not select an option for wheelchair-accessibility\n";
+    }
+
+      var unisex = "";
+      if (document.getElementById('unisex_true').checked) {
+        unisex = "true";
+      }
+      else if (document.getElementById('unisex_false').checked) {
+       unisex = "false";
+      }
+      else {
+          correct = false;
+          error += "Did not select an option for unisex\n";
+      }
+
+
+      var changing = "";
+      if (document.getElementById('changing_true').checked) {
+        changing = "true";
+      }
+      else if (document.getElementById('changing_false').checked) {
+        changing = "false";
+      }
+      else {
+        correct = false;
+        error += "Did not select an option for changing stations\n";
+      }
+
+    if(correct) {
+       var final = "Congats! You've successfully added a new bathroom location to our database!"
+               + "\nHere's some info on the new bathroom:\nName: " +
+              name + "\nStreet: " + street + "\nCity: " + city + "\nState: " + state +
+              "\nCountry: " + country + "\nLatitude: " +
+              latitude_new + "\nLongitude: " + longitude_new + "\nAccessible: " + accessible + "\nUnisex: " +
+              unisex + "\nChanging tables: " + changing;
+      alert(final);
+  }
+   else
+     alert(error);
+  }
+</script>
+</body>
+</html>
