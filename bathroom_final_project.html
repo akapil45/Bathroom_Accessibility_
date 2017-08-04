@@ -8,32 +8,42 @@
         width: 100%;
        }
     </style>
-  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="filter_functions.js"></script>
   </head>
   <body onload = "getInitialLocation()">
-    <ul>
-      <li><a href="bathroom_final_project.html">Map</a></li>
-      <li><a href="list_of_filtered_bathrooms.html">Bathroom Database</a></li>
-      <li><a href="mission_page.html">Our Mission</a></li>
-      <li><a href="resources_page.html">Resources Used</a></li>
-    </ul>
     <h3>My Google Maps</h3>
-    <form id="form" onsubmit="return false;">
-        <input style="position:absolute; top:3%; left:15%; width:20%;" type="text" id="userInput" name = "Hello" value = "Enter the latitude" />
-        <input style="position:absolute; top:3%; left:35%; width:20%;" type="text" id="userInput2" value = "Enter the longitude" />
-        <input style="position:absolute; top:3%; left:55%; width:10%;" type="submit" onclick="setLocation()" />
-    </form>
+        <div class="container">
+          <h2>Filter your bathrooms</h2>
+          <p>Check any of the options below to make your search more specific.</p>
+          <form>
+            <div  class="checkbox">
+              <label ><input type="checkbox" value="" id = "unisex">unisex</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" value="" id = "accessible">accessible</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" value="" id = "changing_table">changing table</label>
+            </div>
+          </form>
+        </div>
+        <dir><a href="list_of_filtered_bathrooms.html">Check out the list of bathrooms in our database!</a></dir>
+        <dir><a href="WhyItsImportant.html">Our Website's Mission</a></dir>
+        <dir><a href="SubmitNewLocation.html">Submit a New Bathroom Location!</a></dir>
+        <dir><a href="Resources">Resources</a></dir>
+    <script type="text/javascript">
+    </script>
     <p id="demo"></p>
     <div id="map" ></div>
-    <div id="googleMap" style="width:60%;height:800px;"></div>
-    
     <script src="bathroomList.js"></script>
     <script src="bathroom_map.js"></script>
-    <script src = "directions_functions.js"></script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMwYbU5tgheDwzUtKQEUz_TBz-DU2GlTg&callback=initMap">
     </script>
-      <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCc7FZQ6jG2VcxnxbMNdkPFFzrUsJxq-ys&callback=getLocation"></script>
-    <dir><a href="ListOfBathrooms.html">Check out the list of bathrooms in our database!</a></dir>
+    <div id="id01">Hello</div>
   </body>
 </html>
