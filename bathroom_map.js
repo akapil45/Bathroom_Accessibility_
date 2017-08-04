@@ -23,8 +23,6 @@
   function showPosition(position) {
      latitude1 = position.coords.latitude;
      longitude1 = position.coords.longitude;
-     x.innerHTML = "Current Latitude: " + latitude1 +
-                   "<br>Current Longitude: " + longitude1;
      initMap();
   }
 
