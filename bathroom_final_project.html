@@ -35,7 +35,71 @@
         <dir><a href="WhyItsImportant.html">Our Website's Mission</a></dir>
         <dir><a href="SubmitNewLocation.html">Submit a New Bathroom Location!</a></dir>
         <dir><a href="Resources">Resources</a></dir>
-    <script type="text/javascript">
+    <script type="text/javascript">/*
+    var bathroomList = [];
+
+    $(document).ready(function(){
+        $('input[type="checkbox"]').click(function(){
+            if($(this).is(":checked")){
+              if(document.getElementById("unisex").checked == true && document.getElementById("accessible").checked == true && document.getElementById("changing_table").checked == true) {
+                        showBathroomWithAll(bathrooms);
+                  }
+              else if(document.getElementById("unisex").checked == true && document.getElementById("accessible").checked == true) {
+                        showUnisex_Accessible(bathrooms);
+                  }
+              else if(document.getElementById("accessible").checked == true && document.getElementById("changing_table").checked == true ) {
+                        showAccessible_ChangingTable(bathrooms);
+                  }
+              else if(document.getElementById("unisex").checked == true && document.getElementById("changing_table").checked == true) {
+                        showUnisex_ChangingTable(bathrooms);
+                      }
+              else if(document.getElementById("unisex").checked == true) {
+                  document.getElementById("id01").innerHTML = showUnisex(bathrooms);
+                }
+              else if(document.getElementById("accessible").checked == true) {
+                   showAccessible(bathrooms);
+                 }
+              else if(document.getElementById("changing_table").checked == true) {
+                    showChangingTable(bathrooms);
+                  }
+              }
+            else if($(this).is(":not(:checked)")){
+              if (document.getElementById("accessible").checked == true &&
+              document.getElementById("changing_table").checked == true){
+                showAccessible_ChangingTable(bathrooms);
+              }
+              else if (document.getElementById("accessible").checked == true &&
+              document.getElementById("unisex").checked == true){
+                showUnisex_Accessible(bathrooms);
+              }
+              else if (document.getElementById("unisex").checked == true &&
+              document.getElementById("changing_table").checked == true){
+                showUnisex_ChangingTable(bathrooms);
+              }
+              else if (document.getElementById("accessible").checked == true){
+                showAccessible(bathrooms);
+              }
+              else if (document.getElementById("unisex").checked == true){
+                showUnisex(bathrooms);
+              }
+              else if (document.getElementById("changing_table").checked == true){
+                showChangingTable(bathrooms);
+              }
+              else {
+                listout(bathrooms);
+              }
+            }
+           //printTest(bathroomList);
+        });
+    });
+
+    function printTest(arr1) {
+        var nameArray = [];
+        for(int i = 0; i < arr1.length; i ++) {
+              nameArray.push(arr1[i].name);
+        }
+        document.getElementById("id01").innerHTML = nameArray;
+    } */
     </script>
     <p id="demo"></p>
     <div id="map" ></div>

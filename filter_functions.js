@@ -1,15 +1,6 @@
-
 //only lists out all the bathrooms
 function listout(arr) {
-    var nameArray = [];
-    var latitudeArray = [];
-    var longitudeArray =[];
-    var i;
-    for(i = 0; i < arr.length; i++) {
-        nameArray.push(arr[i].name);
-        latitudeArray.push(arr[i].latitude);
-        longitudeArray.push(arr[i].longitude);
-    }
+    return bathrooms;
 }
 
 //list of unisex bathrooms
@@ -17,14 +8,17 @@ function showUnisex(arr) {
   var nameArray = [];
   var latitudeArray = [];
   var longitudeArray =[];
+  var bathrooms1 = [];
   var i;
   for (i = 0; i < arr.length; i++) {
     if (arr[i].unisex == true) {
+      bathrooms1.push(arr[i]);
       nameArray.push(arr[i].name);
       latitudeArray.push(arr[i].latitude);
       longitudeArray.push(arr[i].longitude);
     }
   }
+  return nameArray;
 }
 
 //list of accessible bathrooms
