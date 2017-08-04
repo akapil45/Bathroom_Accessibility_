@@ -13,9 +13,109 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="filter_functions.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
+
+
   <body onload = "getInitialLocation()">
-    <h3>My Google Maps</h3>
+    <h3>Bathroom List</h3>
+        <!--search bar at top-->
+        <div class="container">
+          <h2 id="text-center"> Enter Location: </h2>
+          <form  id="location-form">
+            <input type="text" id="location-input" class="form-control form-control-lg">
+            <br>
+            <button type="submit" class="btn btn-primary btn-block">Submit</button>
+          </form>
+          <div class= "card-block" id="formatted-address"></div>
+          <!--<div class= "card-block" id="address-components"></div>-->
+          <div class= "card-block" id="geometry"></div>
+        </div>
+
+        <!--geocoding-->
+        <script>
+
+          //Get Location formattedAddress
+          var locationForm = document.getElementById("location-form");
+
+
+          // listen for submit
+          locationForm.addEventListener("submit", geocode);
+
+
+          function geocode(e) {
+            // prevent actual submit
+            e.preventDefault();
+
+
+            var location= document.getElementById("location-input").value;
+            axios.get("https://maps.googleapis.com/maps/api/geocode/json?",{
+              params:{
+                address:location,
+                key: "AIzaSyD9epHHRzP_GKGagtgEBzD939TnTgGq1R4"
+              }
+            })
+            .then(function(response){
+              // log full response
+              console.log(response);
+
+              //formatted address
+              var formattedAddress =response.data.results[0].formatted_address;
+              var formattedAddressOutput = `
+                <ul class="list-group">
+                  <li class="list-group-item">${formattedAddress}</li>
+                </ul>
+              `;
+
+
+          /*   address components
+              var addressComponents = response.data.results[0].address_components;
+              var addressComponentsOutput= '<ul class="list-group">';
+              for(var i=0; i<addressComponents.length; i++){
+                addressComponentsOutput += `
+                  <li class="list-group-item"> <strong>${addressComponents[i].types[0]}</strong>: ${addressComponents[i].long_name}</li>
+                `;
+              }
+              addressComponentsOutput += '</ul>';  */
+
+
+
+          // geometry
+
+              //BRENNNAAA: lat value
+              var lat =response.data.results[0].geometry.location.lat;
+
+              // BRENAAA : lng value
+              var lng =response.data.results[0].geometry.location.lng;
+
+
+      /*        var geometryOutput = `
+                <ul class="list-group">
+                  <li class="list-group-item"><strong>Latitude</strong>: ${lat}</li>
+                  <li class="list-group-item"><strong>Longitude</strong>: ${lng}</li>
+                </ul>
+              `;
+      */
+
+              //output to app
+              document.getElementById("formatted-address").innerHTML = formattedAddressOutput;
+      //        document.getElementById("address-components").innerHTML = addressComponentsOutput;
+      //        document.getElementById("geometry").innerHTML = geometryOutput;
+
+            })
+            .catch(function(error){
+              console.log(error);
+              alert("-invalid location input-");
+            });
+          }
+
+        </script>
+
+        <!--checkboxes-->
         <div class="container">
           <h2>Filter your bathrooms</h2>
           <p>Check any of the options below to make your search more specific.</p>
@@ -31,75 +131,9 @@
             </div>
           </form>
         </div>
-        <dir><a href="list_of_filtered_bathrooms.html">Check out the list of bathrooms in our database!</a></dir>
-        <dir><a href="WhyItsImportant.html">Our Website's Mission</a></dir>
-        <dir><a href="SubmitNewLocation.html">Submit a New Bathroom Location!</a></dir>
-        <dir><a href="Resources">Resources</a></dir>
-    <script type="text/javascript">/*
-    var bathroomList = [];
 
-    $(document).ready(function(){
-        $('input[type="checkbox"]').click(function(){
-            if($(this).is(":checked")){
-              if(document.getElementById("unisex").checked == true && document.getElementById("accessible").checked == true && document.getElementById("changing_table").checked == true) {
-                        showBathroomWithAll(bathrooms);
-                  }
-              else if(document.getElementById("unisex").checked == true && document.getElementById("accessible").checked == true) {
-                        showUnisex_Accessible(bathrooms);
-                  }
-              else if(document.getElementById("accessible").checked == true && document.getElementById("changing_table").checked == true ) {
-                        showAccessible_ChangingTable(bathrooms);
-                  }
-              else if(document.getElementById("unisex").checked == true && document.getElementById("changing_table").checked == true) {
-                        showUnisex_ChangingTable(bathrooms);
-                      }
-              else if(document.getElementById("unisex").checked == true) {
-                  document.getElementById("id01").innerHTML = showUnisex(bathrooms);
-                }
-              else if(document.getElementById("accessible").checked == true) {
-                   showAccessible(bathrooms);
-                 }
-              else if(document.getElementById("changing_table").checked == true) {
-                    showChangingTable(bathrooms);
-                  }
-              }
-            else if($(this).is(":not(:checked)")){
-              if (document.getElementById("accessible").checked == true &&
-              document.getElementById("changing_table").checked == true){
-                showAccessible_ChangingTable(bathrooms);
-              }
-              else if (document.getElementById("accessible").checked == true &&
-              document.getElementById("unisex").checked == true){
-                showUnisex_Accessible(bathrooms);
-              }
-              else if (document.getElementById("unisex").checked == true &&
-              document.getElementById("changing_table").checked == true){
-                showUnisex_ChangingTable(bathrooms);
-              }
-              else if (document.getElementById("accessible").checked == true){
-                showAccessible(bathrooms);
-              }
-              else if (document.getElementById("unisex").checked == true){
-                showUnisex(bathrooms);
-              }
-              else if (document.getElementById("changing_table").checked == true){
-                showChangingTable(bathrooms);
-              }
-              else {
-                listout(bathrooms);
-              }
-            }
-           //printTest(bathroomList);
-        });
-    });
 
-    function printTest(arr1) {
-        var nameArray = [];
-        for(int i = 0; i < arr1.length; i ++) {
-              nameArray.push(arr1[i].name);
-        }
-        document.getElementById("id01").innerHTML = nameArray;
-    } */
+    <script type="text/javascript">
     </script>
     <p id="demo"></p>
     <div id="map" ></div>
