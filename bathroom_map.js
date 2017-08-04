@@ -46,7 +46,7 @@ function initMap(bathroomArray) {
     listOut();
     var uluru = {lat:latitude1, lng:longitude1};
     var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 12,
+        zoom: 8,
         center: uluru
     });
     var marker = new google.maps.Marker({
