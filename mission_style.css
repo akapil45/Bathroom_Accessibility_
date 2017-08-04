@@ -1,0 +1,61 @@
+/*navigation bar*/
+ul {
+  list-style-type: none;
+  background-color: lavender;
+  overflow: hidden;
+}
+
+li{
+  float:left;
+}
+
+li a{
+  display:block;
+  color: darkslateblue;
+  padding: 25px;
+  text-decoration:none;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+
+.headings {
+  padding: 20px;
+  color:darkslategray;
+  background-color:  lightsteelblue;
+  text-align: center;
+  font-weight: bold;
+  font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+
+#bigTitle{
+  font-size: 150px;
+  text-align: center;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  color: darkslategray;
+}
+
+#about-me-paragraph {
+  text-align: center;
+  color: cadetblue;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-size: 25px;
+}
+
+h2 {
+  text-align: center;
+}
+
+body {
+  background-image: url("pride_flag.jpg");
+  background-size: cover;
+}
+
+.dropdown  {
+  left: 50%;
+  right: auto;
+  text-align: center;
+  transform: translate(-50%, 0);
+}
+
+.panel-default > .panel-heading {
+    background-color: #D6CAD5;
+}
