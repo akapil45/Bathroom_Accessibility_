@@ -8,12 +8,24 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="//maps.googleapis.com/maps/api/js"></script>
+      <link rel="stylesheet" type="text/CSS" href="website_style.css">
 </head>
-<body>
+
+
+<body class=backcolor>
+  <!--navigation bar-->
+  <ul>
+    <li><a href="bathroom_final_project.html">Map</a></li>
+    <li><a href="list_of_filtered_bathrooms.html">Bathroom Database</a></li>
+    <li><a href="mission_page.html">Our Mission</a></li>
+    <li><a href="SubmitNewLocation.html">Submit New Bathrooms</a></li>
+    <li><a href="resources.html">Resources Used</a></li>
+  </ul>
+
 <div class="container">
-  <h2>Fill in the required fields to create a new bathroom location!</h2>
-  <p>All fields are required!</p>
-  <form>
+  <h2 id=bigHeading>Fill in the required fields to create a new bathroom location!</h2>
+  <p id=text-center>All fields are required!</p>
+  <form id=check_any>
     <div class="form-group">
       <label for="name">Name:</label>
       <input type="text" class="form-control" id="name">
@@ -42,7 +54,7 @@
               <label for="long">Longitude:</label>
               <input type="text" class="form-control" id="longitude">
             </div>
-
+<div id=check_any>
 <p>Is this bathroom unisex?</p>
   <form>
     <div class="radio">
@@ -75,7 +87,10 @@
   </form>
   <p><br><br><br>(Due to current issues (a lack of a permanent database), we are currently unable to store locations permanently. Sorry for the inconvenience!)<br></p>
 </div>
+</div>
 <script>
+
+
 function newLocation() {
     var correct = true;
     var error = "ERROR: \n";
@@ -91,7 +106,6 @@ function newLocation() {
            correct = false;
            error += "Invalid input for name/street/city/state/country\n";
     }
-
     var latitude_new;
     var longitude_new;
     if(!isNaN(document.getElementById("latitude").value) && !isNaN(document.getElementById("longitude").value)
@@ -104,7 +118,6 @@ function newLocation() {
       correct = false;
       error = "Invalid input for latitude/longitude\n";
     }
-
     var accessible = "";
     if (document.getElementById('accessible_true').checked) {
       accessible = "true";
@@ -116,7 +129,6 @@ function newLocation() {
       correct = false;
       error += "Did not select an option for wheelchair-accessibility\n";
     }
-
       var unisex = "";
       if (document.getElementById('unisex_true').checked) {
         unisex = "true";
@@ -128,8 +140,6 @@ function newLocation() {
           correct = false;
           error += "Did not select an option for unisex\n";
       }
-
-
       var changing = "";
       if (document.getElementById('changing_true').checked) {
         changing = "true";
@@ -141,7 +151,6 @@ function newLocation() {
         correct = false;
         error += "Did not select an option for changing stations\n";
       }
-
     if(correct) {
        var final = "Congats! You've successfully added a new bathroom location to our database!"
                + "\nHere's some info on the new bathroom:\nName: " +
