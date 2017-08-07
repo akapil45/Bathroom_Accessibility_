@@ -23,85 +23,19 @@
 
 
   <body onload = "getInitialLocation()">
-
     <!--navigation bar-->
     <ul>
       <li><a href="bathroom_final_project.html">Map</a></li>
       <li><a href="list_of_filtered_bathrooms.html">Bathroom Database</a></li>
       <li><a href="mission_page.html">Our Mission</a></li>
-      <li><a href="resources_page.html">Resources Used</a></li>
+      <li><a href="SubmitNewLocation.html">Submit New Bathrooms</a></li>
+      <li><a href="resources.html">Resources Used</a></li>
     </ul>
-    <script type="text/javascript">
-    var bathroomList = [];
-    $(document).ready(function(){
-        $('input[type="checkbox"]').click(function(){
-            if($(this).is(":checked")){
-              if(document.getElementById("unisex").checked == true && document.getElementById("accessible").checked == true && document.getElementById("changing_table").checked == true) {
-                        bathroomList = showBathroomWithAll(bathrooms);
-                  }
-              else if(document.getElementById("unisex").checked == true && document.getElementById("accessible").checked == true) {
-                        bathroomList = showUnisex_Accessible(bathrooms);
-                  }
-              else if(document.getElementById("accessible").checked == true && document.getElementById("changing_table").checked == true ) {
-                        bathroomList = showAccessible_ChangingTable(bathrooms);
-                  }
-              else if(document.getElementById("unisex").checked == true && document.getElementById("changing_table").checked == true) {
-                        bathroomList = showUnisex_ChangingTable(bathrooms);
-                      }
-              else if(document.getElementById("unisex").checked == true) {
-                  bathroomList = showUnisex(bathrooms);
-              }
-              else if(document.getElementById("accessible").checked == true) {
-                   bathroomList = showAccessible(bathrooms);
-                 }
-              else if(document.getElementById("changing_table").checked == true) {
-                    bathroomList = showChangingTable(bathrooms);
-                  }
-              }
+    <h2><img align="middle" src= "logo.png"></h2>
 
-              else if($(this).is(":not(:checked)")){
-              if (document.getElementById("accessible").checked == true &&
-              document.getElementById("changing_table").checked == true){
-                bathroomList = showAccessible_ChangingTable(bathrooms);
-              }
-              else if (document.getElementById("accessible").checked == true &&
-              document.getElementById("unisex").checked == true){
-                bathroomList = showUnisex_Accessible(bathrooms);
-              }
-              else if (document.getElementById("unisex").checked == true &&
-              document.getElementById("changing_table").checked == true){
-                bathroomList = showUnisex_ChangingTable(bathrooms);
-              }
-              else if (document.getElementById("accessible").checked == true){
-                bathroomList = showAccessible(bathrooms);
-              }
-              else if (document.getElementById("unisex").checked == true){
-                bathroomList = showUnisex(bathrooms);
-              }
-              else if (document.getElementById("changing_table").checked == true){
-                bathroomList = showChangingTable(bathrooms);
-              }
-              else {
-                bathroomList = listout(bathrooms);
-              }
-            }
-           printTest(bathroomList);
-           initMap(bathroomList);
-        });
-    });
-
-    function printTest(arr1) {
-        var str = "Original length: " + bathrooms.length + "<br>New length: " + arr1.length + "<br>";
-        for(var i = 0; i < arr1.length; i ++) {
-              str += i + ") Name: " + arr1[i].name + "Id: " + arr1[i].id + "<br>";
-        }
-        document.getElementById("id01").innerHTML = str;
-    }
-    </script>
-    <h3>Bathroom List</h3>
         <!--search bar at top-->
         <div class="container">
-          <h2 id="text-center"> Enter Location: </h2>
+          <h2 id="text-center"> Enter a Specific Location: </h2>
           <form  id="location-form">
             <input type="text" id="location-input" class="form-control form-control-lg">
             <br>
@@ -192,9 +126,9 @@
         </script>
 
         <!--checkboxes-->
-        <div class="container">
-          <h2>Filter your bathrooms</h2>
-          <p>Check any of the options below to make your search more specific.</p>
+        <div class="container" >
+          <h2 id=text-center>Filter your bathrooms</h2>
+          <p id=check_any>Check any of the options below to make your search more specific.</p>
           <form>
             <div  class="checkbox">
               <label ><input type="checkbox" value="" id = "unisex">unisex</label>
