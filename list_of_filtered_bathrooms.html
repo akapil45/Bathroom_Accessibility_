@@ -3,21 +3,36 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>bathroom</title>
+    <title>Bathroom Database</title>
     <script src="functions.js"></script>
     <script src="bathroomList.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/CSS" href="website_style.css">
   </head>
 
-  <body onload="listout(bathrooms)" >
+
+<!-- calling onload somehow stops background image from happening-->
+<div id=pride>
+  <body onload="listout(bathrooms)">
+
+
+    <!--navigation bar-->
+    <ul>
+      <li><a href="bathroom_final_project.html">Map</a></li>
+      <li><a href="list_of_filtered_bathrooms.html">Bathroom Database</a></li>
+      <li><a href="mission_page.html">Our Mission</a></li>
+      <li><a href="SubmitNewLocation.html">Submit New Bathrooms</a></li>
+      <li><a href="resources.html">Resources Used</a></li>
+
+    </ul>
 
 <!--checkbox filters-->
     <div class="container">
-      <h2>Filter your bathrooms</h2>
-      <p>Check any of the options below to make your search more specific.</p>
+      <h2 id=bigHeading>Look Through the Bathroom Database</h2>
+      <p id=check_any>Check any of the options below to make your search more specific.</p>
       <form>
         <div  class="checkbox">
           <label ><input type="checkbox" value="" id = "unisex">unisex</label>
@@ -30,6 +45,9 @@
         </div>
       </form>
     </div>
+
+<!--filtering the list-->
+    <div class=list_look id="id01"></div>
     <script type="text/javascript">
     $(document).ready(function(){
         $('input[type="checkbox"]').click(function(){
@@ -86,10 +104,10 @@
     });
     </script>
 
-    <div id="id01"></div>
+
 
   </body>
 
-
+</div>
 
 </html>
