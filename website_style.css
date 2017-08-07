@@ -19,8 +19,8 @@ li a{
 
 .headings {
   padding: 20px;
-  color:darkslategray;
-  background-color:  lightsteelblue;
+  color: #69340F;
+  background-color: #F4F9FF;
   text-align: center;
   font-weight: bold;
   font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
@@ -45,8 +45,16 @@ h2 {
 }
 
 body {
-  background-image: url("pride_flag.jpg");
+
   background-size: cover;
+}
+
+#pride{
+  background-image: url("pride_flag.jpg");
+}
+
+.with_background {
+  background-image: url("pride_flag.jpg");
 }
 
 .dropdown  {
@@ -59,3 +67,4 @@ body {
 .panel-default > .panel-heading {
     background-color: #D6CAD5;
 }
+
