@@ -1,7 +1,7 @@
 /*navigation bar*/
 ul {
   list-style-type: none;
-  background-color: lavender;
+  background-color: #D1F2EB  ;
   overflow: hidden;
 }
 
@@ -33,11 +33,11 @@ li a{
   color: darkslategray;
 }
 
-#about-me-paragraph {
-  text-align: center;
-  color: cadetblue;
+#bigHeading {
+  text-align: left;
+  color: #1A5276;
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-  font-size: 25px;
+  font-size: 40px;
 }
 
 h2 {
@@ -51,11 +51,11 @@ body {
 
 #pride{
   background-image: url("pride_flag.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
-.with_background {
-  background-image: url("pride_flag.jpg");
-}
 
 .dropdown  {
   left: 50%;
@@ -65,6 +65,7 @@ body {
 }
 
 .panel-default > .panel-heading {
-    background-color: #D6CAD5;
+    background-color: #D1F2EB  ;
 }
+
 
