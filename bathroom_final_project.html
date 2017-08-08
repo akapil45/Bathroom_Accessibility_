@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Bathroom Accessibility</title>
+    <title>Bathroom List</title>
     <style>
        #map {
         height: 400px;
@@ -19,11 +19,18 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <link rel="stylesheet" type="text/CSS" href="mission_style.css">
+  <script src="bathroomList.js"></script>
+  <script src="bathroom_map.js"></script>
+  <script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMwYbU5tgheDwzUtKQEUz_TBz-DU2GlTg&callback=initMap"></script>
   </head>
 
 
+  <div class=backcolor>
   <body onload = "getInitialLocation()">
+    
     <!--navigation bar-->
+    <div id="nav">
     <ul>
       <li><a href="bathroom_final_project.html">Map</a></li>
       <li><a href="list_of_filtered_bathrooms.html">Bathroom Database</a></li>
@@ -31,7 +38,8 @@
       <li><a href="SubmitNewLocation.html">Submit New Bathrooms</a></li>
       <li><a href="resources.html">Resources Used</a></li>
     </ul>
-    <h2><img align="middle" src= "logo.png"></h2>
+    </div>
+    <h2 class=logo><img align="middle" src= "final_logo.png"></h2>
 
         <!--search bar at top-->
         <div class="container">
@@ -220,6 +228,8 @@
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMwYbU5tgheDwzUtKQEUz_TBz-DU2GlTg&callback=initMap">
     </script>
     <div id="id01">Hello</div>
+    
   </body>
+  </div>
 </html>
 
