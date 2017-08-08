@@ -1,8 +1,11 @@
-/*navigation bar*/
 ul {
   list-style-type: none;
-  background-color: #D1F2EB  ;
+  margin: 0;
+  padding:0;
+  background-color: #17252A ;
   overflow: hidden;
+  width: 100%;
+  display: inline-block;
 }
 
 li{
@@ -11,19 +14,30 @@ li{
 
 li a{
   display:block;
-  color: darkslateblue;
+  color: #FEFFFF;
+  text-align: center;
   padding: 25px;
   text-decoration:none;
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+font-family: Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif;
+}
+
+#nav {
+  text-align: center;
 }
 
 .headings {
   padding: 20px;
-  color:  #FF5E38;
-  background-color: #F4F9FF;
+  color:  #2B7A78;
+  background-color:#DEF2F1;
   text-align: center;
   font-weight: bold;
   font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  max-height:100%;
 }
 
 #bigTitle{
@@ -35,7 +49,7 @@ li a{
 
 #bigHeading {
   text-align: center;
-  color: #FF5E38;
+  color: white;
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
   font-size: 40px;
   padding:10px;
@@ -43,33 +57,38 @@ li a{
 }
 
 .backcolor {
-   background-color: #F4F9FF;
+   background-color: #3AAFA9;
+}
+
+#hoho {
+  color: #17252A;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 }
 
 #text-center {
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-family: Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif;
   font-size: 25px;
   font-weight: 600;
-  color: #276A96;
+  color: #17252A;
 }
 
 .list_look {
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
   font-size: 15px;
-  color:#276A96;
-  padding: 30px;
+  color:#FEFFFF;
+  padding: 70px;
 }
 
 #check_any {
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
   font-size: 15px;
-  color: #33A2B0 ;
+  color: #FEFFFF;
 }
 
 .checkbox {
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
   font-size: 15px;
-  color:#FF8B72;
+  color:#FEFFFF;
 }
 
 h2 {
@@ -88,6 +107,11 @@ body {
   background-repeat: no-repeat;
 }
 
+#line {
+  background-color: #2B7A78;
+  color:#2B7A78;
+  font-size: 4px;
+}
 
 .dropdown  {
   left: 50%;
@@ -97,15 +121,15 @@ body {
 }
 
 .panel-default > .panel-heading {
-    background-color: #D1F2EB  ;
+    background-color: #17252A ;
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 }
 
 #blurbs {
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-  background-color: #F4F9FF;
+  background-color: #DEF2F1;
   font-size: 15px;
-  color: #FF5E38;
+  color: #2B7A78;
   padding: 25px;
 }
 
@@ -113,7 +137,7 @@ body {
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
   font-weight: 500;
   font-size: 20px;
-  color: darkslategrey;
+  color: #FEFFFF;
   padding: 15px;
 }
 
