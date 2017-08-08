@@ -3,22 +3,10 @@
    var latitude1 = 0;
    var longitude1 = 0;
 
-   function setLatAndLong(newLat,newLong) {
-     alert("YES");
-     latitude1 = newLat;
-     longitude1 = newLong;
-   }
-
-   function setLocation() {
-       if(!isNaN(document.getElementById("userInput").value) && !isNaN(document.getElementById("userInput2").value)) {
-         latitude1 = parseFloat(document.getElementById("userInput").value);
-         longitude1 = parseFloat(document.getElementById("userInput2").value);
-         initMap(bathrooms);
-       }
-       else {
-           alert('Sorry, "' + document.getElementById("userInput").value + '" and "'
-                + document.getElementById("userInput2").value + '" are not valid inputs.');
-       }
+   function setLocation(lat,lng) {
+       latitude1 = lat;
+       longitude1 = lng;
+      initMap(bathrooms);
    }
    function getInitialLocation() {
        if (navigator.geolocation) {
