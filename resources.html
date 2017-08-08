@@ -6,15 +6,28 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <body>
+    <link rel="stylesheet" type="text/CSS" href="website_style.css">
+  <body id=pride>
+
+
+    <!--navigation bar-->
+    <ul>
+      <li><a href="bathroom_final_project.html">Map</a></li>
+      <li><a href="list_of_filtered_bathrooms.html">Bathroom Database</a></li>
+      <li><a href="mission_page.html">Our Mission</a></li>
+      <li><a href="SubmitNewLocation.html">Submit New Bathrooms</a></li>
+      <li><a href="resources.html">Resources Used</a></li>
+
+    </ul>
+
     <div class="container">
-  <h2>The Resources We Used</h2>
+  <h2 id=bigTitle>Resources Used</h2>
   <p> Click on each panel to find out more inforation on each resource.</p>
   <div class="panel-group" id="accordion">
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Google Maps API</a>
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" id=blurb_title>Google Maps API</a>
         </h4>
       </div>
       <div id="collapse1" class="panel-collapse collapse in">
@@ -24,7 +37,7 @@
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Refuge Restrooms public API</a>
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2"id=blurb_title>Refuge Restrooms public API</a>
         </h4>
       </div>
       <div id="collapse2" class="panel-collapse collapse">
@@ -45,7 +58,8 @@ body {
 p {
   font-size: 20px;
 }
-
-
+</style>
   </body>
+
 </html>
+
