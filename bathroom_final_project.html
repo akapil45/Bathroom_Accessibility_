@@ -109,7 +109,7 @@
 
               // BRENAAA : lng value
               var lng =response.data.results[0].geometry.location.lng;
-
+              setLocation(lat,lng);
 
       /*        var geometryOutput = `
                 <ul class="list-group">
@@ -127,7 +127,7 @@
             })
             .catch(function(error){
               console.log(error);
-              alert("-invalid location input-");
+              //alert("-invalid location input-");
             });
           }
 
