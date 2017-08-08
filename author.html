@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h2>About the Author</h2>
+  <p1>We are the creators of Bathroom Finder. We are high school students that are part of the Girls who Code program and this is our final project.</p1>
+  <p>Click on each panel to find out more information on each author.</p>
+  <div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Arshia</a>
+        </h4>
+      </div>
+      <div id="collapse1" class="panel-collapse collapse in">
+        <div class="panel-body">Arshia is currently is a student at Cupertino High School. She has developed an interest in computer science by joining the Girls Who Code Summer Immersion Program. She is interested in the field of medicine and computer science. In the future, she hopes to integrate both fields into her career.</div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Brenna</a>
+        </h4>
+      </div>
+      <div id="collapse2" class="panel-collapse collapse">
+        <div class="panel-body">About Brenna</div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Michelle</a>
+        </h4>
+      </div>
+      <div id="collapse3" class="panel-collapse collapse">
+        <div class="panel-body">About Michelle</div>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+.panel-group {
+  position: fixed;
+  top: 25%;
+  left: 1%;
+}
+body {
+  position: fixed;
+  left: 1%;
+  padding: 20px;
+}
+h2 {
+  font-size: 60px;
+  font-family: fantasy;
+}
+p {
+  position: fixed;
+    top: 15%;
+    left:1%;
+}
+p1 {
+  position: fixed;
+  top: 10%;
+  left: 1%;
+}
+</style>
+</body>
+</html>
