@@ -1,14 +1,27 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" type="text/CSS" href="website_style.css">
-</head>
-<body>
-  
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <title>About Us</title>
+    <link rel="stylesheet" type="text/CSS" href="website_style.css">
+    <script src="javascript.js"></script>
+
+  </head>
+
+  <body id=pride>
+
     <!--navigation bar-->
     <ul>
       <li><a href="bathroom_final_project.html">Map</a></li>
@@ -19,69 +32,50 @@
       <li><a href="resources.html">Resources Used</a></li>
 
     </ul>
-  
-<div class="container">
-  <h2>About the Author</h2>
-  <p1>We are the creators of Bathroom Finder. We are high school students that are part of the Girls who Code program and this is our final project.</p1>
-  <p>Click on each panel to find out more information on each author.</p>
-  <div class="panel-group" id="accordion">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Arshia</a>
-        </h4>
-      </div>
-      <div id="collapse1" class="panel-collapse collapse in">
-        <div class="panel-body">Arshia is currently is a student at Cupertino High School. She has developed an interest in computer science by joining the Girls Who Code Summer Immersion Program. She is interested in the field of medicine and computer science. In the future, she hopes to integrate both fields into her career.</div>
+
+    <!--content-->
+    <h1 id=bigTitle> About Us </h1>
+    <h2 class=headings> Welcome to our website! We created Bathroom Finder not only as a final project for the Girls Who Code program, but also as a tool for providing access to bathrooms that suit a variety of needs. <br> Click on the panels below to learn more about each member of our team.</h2>
+
+      <!--accordian collapsible-->
+      <div class="panel-group" id="accordion">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapse1"id=blurb_title>Arshia</a>
+            </h4>
+          </div>
+          <div id="collapse1" class="panel-collapse collapse in">
+            <div class="panel-body">Arshia is currently is a student at Cupertino High School. She has developed an interest in computer science by joining the Girls Who Code Summer Immersion Program. She is interested in the field of medicine and computer science. In the future, she hopes to integrate both fields into her career.</div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapse2"id=blurb_title>Brenna</a>
+            </h4>
+          </div>
+          <div id="collapse2" class="panel-collapse collapse">
+            <div class="panel-body">About Brenna</div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapse3"id=blurb_title>Michelle</a>
+            </h4>
+          </div>
+          <div id="collapse3" class="panel-collapse collapse">
+            <div class="panel-body">Michelle is currently a high schooler in the Bay Area. For a college major and future career, she is interested in pursuing graphic or industrial design. In addition to working with various color palettes and themes, she also loves to practice calligraphy and go camping.</div>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Brenna</a>
-        </h4>
-      </div>
-      <div id="collapse2" class="panel-collapse collapse">
-        <div class="panel-body">About Brenna</div>
-      </div>
-    </div>
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Michelle</a>
-        </h4>
-      </div>
-      <div id="collapse3" class="panel-collapse collapse">
-        <div class="panel-body">About Michelle</div>
-      </div>
-    </div>
-  </div>
-</div>
-<style>
-.panel-group {
-  position: fixed;
-  top: 25%;
-  left: 1%;
-}
-body {
-  position: fixed;
-  left: 1%;
-  padding: 20px;
-}
-h2 {
-  font-size: 60px;
-  font-family: fantasy;
-}
-p {
-  position: fixed;
-    top: 15%;
-    left:1%;
-}
-p1 {
-  position: fixed;
-  top: 10%;
-  left: 1%;
-}
-</style>
-</body>
+
+
+    <p id="paragraph">  </p>
+
+
+  </body>
+
 </html>
