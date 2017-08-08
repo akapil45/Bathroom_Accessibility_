@@ -142,6 +142,73 @@
           </form>
         </div>
 
+    <script type="text/javascript">
+    var bathroomList = [];
+    $(document).ready(function(){
+        $('input[type="checkbox"]').click(function(){
+            if($(this).is(":checked")){
+              if(document.getElementById("unisex").checked == true && document.getElementById("accessible").checked == true && document.getElementById("changing_table").checked == true) {
+                        bathroomList = showBathroomWithAll(bathrooms);
+                  }
+              else if(document.getElementById("unisex").checked == true && document.getElementById("accessible").checked == true) {
+                        bathroomList = showUnisex_Accessible(bathrooms);
+                  }
+              else if(document.getElementById("accessible").checked == true && document.getElementById("changing_table").checked == true ) {
+                        bathroomList = showAccessible_ChangingTable(bathrooms);
+                  }
+              else if(document.getElementById("unisex").checked == true && document.getElementById("changing_table").checked == true) {
+                        bathroomList = showUnisex_ChangingTable(bathrooms);
+                      }
+              else if(document.getElementById("unisex").checked == true) {
+                  bathroomList = showUnisex(bathrooms);
+              }
+              else if(document.getElementById("accessible").checked == true) {
+                   bathroomList = showAccessible(bathrooms);
+                 }
+              else if(document.getElementById("changing_table").checked == true) {
+                    bathroomList = showChangingTable(bathrooms);
+                  }
+              }
+
+              else if($(this).is(":not(:checked)")){
+              if (document.getElementById("accessible").checked == true &&
+              document.getElementById("changing_table").checked == true){
+                bathroomList = showAccessible_ChangingTable(bathrooms);
+              }
+              else if (document.getElementById("accessible").checked == true &&
+              document.getElementById("unisex").checked == true){
+                bathroomList = showUnisex_Accessible(bathrooms);
+              }
+              else if (document.getElementById("unisex").checked == true &&
+              document.getElementById("changing_table").checked == true){
+                bathroomList = showUnisex_ChangingTable(bathrooms);
+              }
+              else if (document.getElementById("accessible").checked == true){
+                bathroomList = showAccessible(bathrooms);
+              }
+              else if (document.getElementById("unisex").checked == true){
+                bathroomList = showUnisex(bathrooms);
+              }
+              else if (document.getElementById("changing_table").checked == true){
+                bathroomList = showChangingTable(bathrooms);
+              }
+              else {
+                bathroomList = listout(bathrooms);
+              }
+           }
+           printTest(bathroomList);
+           initMap(bathroomList);
+        });
+    });
+
+    function printTest(arr1) {
+        var str = "Original length: " + bathrooms.length + "<br>New length: " + arr1.length + "<br>";
+        for(var i = 0; i < arr1.length; i ++) {
+              str += i + ") Name: " + arr1[i].name + "Id: " + arr1[i].id + "<br>";
+        }
+        document.getElementById("id01").innerHTML = str;
+    }
+    </script>
 
     <script type="text/javascript">
     </script>
