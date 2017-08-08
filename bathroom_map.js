@@ -47,7 +47,7 @@ function initMap(bathroomArray) {
     var marker = new google.maps.Marker({
         position: uluru,
         map: map,
-        icon: 'blue_markerA.png'
+        icon: 'blue_MarkerA.png'
       });
     var infoWindow = new google.maps.InfoWindow({
       content: 'Your location'
