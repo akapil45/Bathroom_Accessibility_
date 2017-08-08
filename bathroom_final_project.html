@@ -1,18 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Bathroom Accessibility</title>
+    <title>Bathroom List</title>
     <style>
        #map {
         height: 400px;
         width: 100%;
-       }
+      }
     </style>
-    <script src="bathroomList.js"></script>
-    <script src="bathroom_map.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="filter_functions.js"></script>
   <meta charset="utf-8">
@@ -20,20 +17,29 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <link rel="stylesheet" type="text/CSS" href="mission_style.css">
+  <link rel="stylesheet" type="text/CSS" href="website_style.css">
+  <script src="bathroomList.js"></script>
+  <script src="bathroom_map.js"></script>
+  <script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMwYbU5tgheDwzUtKQEUz_TBz-DU2GlTg&callback=initMap"></script>
   </head>
 
 
-  <body onload = "getInitialLocation()">
+
+<div class=backcolor>
+  <body onload = "getInitialLocation()" >
+
     <!--navigation bar-->
-    <ul>
+    <div id="nav">
+    <ul >
       <li><a href="bathroom_final_project.html">Map</a></li>
       <li><a href="list_of_filtered_bathrooms.html">Bathroom Database</a></li>
       <li><a href="mission_page.html">Our Mission</a></li>
       <li><a href="SubmitNewLocation.html">Submit New Bathrooms</a></li>
       <li><a href="resources.html">Resources Used</a></li>
     </ul>
-    <h2><img align="middle" src= "logo.png"></h2>
+  </div>
+    <h2 class=logo><img align="middle" src= "final_logo.png"></h2>
 
         <!--search bar at top-->
         <div class="container">
@@ -50,13 +56,20 @@
 
         <!--geocoding-->
         <script>
+
           //Get Location formattedAddress
           var locationForm = document.getElementById("location-form");
+
+
           // listen for submit
           locationForm.addEventListener("submit", geocode);
+
+
           function geocode(e) {
             // prevent actual submit
             e.preventDefault();
+
+
             var location= document.getElementById("location-input").value;
             axios.get("https://maps.googleapis.com/maps/api/geocode/json?",{
               params:{
@@ -67,6 +80,7 @@
             .then(function(response){
               // log full response
               console.log(response);
+
               //formatted address
               var formattedAddress =response.data.results[0].formatted_address;
               var formattedAddressOutput = `
@@ -74,6 +88,8 @@
                   <li class="list-group-item">${formattedAddress}</li>
                 </ul>
               `;
+
+
           /*   address components
               var addressComponents = response.data.results[0].address_components;
               var addressComponentsOutput= '<ul class="list-group">';
@@ -83,31 +99,38 @@
                 `;
               }
               addressComponentsOutput += '</ul>';  */
+
+
+
           // geometry
+
               //BRENNNAAA: lat value
               var lat =response.data.results[0].geometry.location.lat;
+
               // BRENAAA : lng value
               var lng =response.data.results[0].geometry.location.lng;
-             var geometryOutput = `
+
+
+      /*        var geometryOutput = `
                 <ul class="list-group">
                   <li class="list-group-item"><strong>Latitude</strong>: ${lat}</li>
                   <li class="list-group-item"><strong>Longitude</strong>: ${lng}</li>
                 </ul>
               `;
-      
-              //setLocation(lat,lng);
+      */
+
               //output to app
               document.getElementById("formatted-address").innerHTML = formattedAddressOutput;
       //        document.getElementById("address-components").innerHTML = addressComponentsOutput;
       //        document.getElementById("geometry").innerHTML = geometryOutput;
+
             })
             .catch(function(error){
               console.log(error);
               alert("-invalid location input-");
             });
-            alert(${lat});
-           //setLocation();
           }
+
         </script>
 
         <!--checkboxes-->
@@ -127,77 +150,85 @@
           </form>
         </div>
 
-    <script type="text/javascript">
-    var bathroomList = [];
-    $(document).ready(function(){
-        $('input[type="checkbox"]').click(function(){
-            if($(this).is(":checked")){
-              if(document.getElementById("unisex").checked == true && document.getElementById("accessible").checked == true && document.getElementById("changing_table").checked == true) {
-                        bathroomList = showBathroomWithAll(bathrooms);
-                  }
-              else if(document.getElementById("unisex").checked == true && document.getElementById("accessible").checked == true) {
-                        bathroomList = showUnisex_Accessible(bathrooms);
-                  }
-              else if(document.getElementById("accessible").checked == true && document.getElementById("changing_table").checked == true ) {
-                        bathroomList = showAccessible_ChangingTable(bathrooms);
-                  }
-              else if(document.getElementById("unisex").checked == true && document.getElementById("changing_table").checked == true) {
-                        bathroomList = showUnisex_ChangingTable(bathrooms);
+        <script type="text/javascript">
+        var bathroomList = [];
+        $(document).ready(function(){
+            $('input[type="checkbox"]').click(function(){
+                if($(this).is(":checked")){
+                  if(document.getElementById("unisex").checked == true && document.getElementById("accessible").checked == true && document.getElementById("changing_table").checked == true) {
+                            bathroomList = showBathroomWithAll(bathrooms);
                       }
-              else if(document.getElementById("unisex").checked == true) {
-                  bathroomList = showUnisex(bathrooms);
-              }
-              else if(document.getElementById("accessible").checked == true) {
-                   bathroomList = showAccessible(bathrooms);
-                 }
-              else if(document.getElementById("changing_table").checked == true) {
+                  else if(document.getElementById("unisex").checked == true && document.getElementById("accessible").checked == true) {
+                            bathroomList = showUnisex_Accessible(bathrooms);
+                      }
+                  else if(document.getElementById("accessible").checked == true && document.getElementById("changing_table").checked == true ) {
+                            bathroomList = showAccessible_ChangingTable(bathrooms);
+                      }
+                  else if(document.getElementById("unisex").checked == true && document.getElementById("changing_table").checked == true) {
+                            bathroomList = showUnisex_ChangingTable(bathrooms);
+                          }
+                  else if(document.getElementById("unisex").checked == true) {
+                      bathroomList = showUnisex(bathrooms);
+                  }
+                  else if(document.getElementById("accessible").checked == true) {
+                       bathroomList = showAccessible(bathrooms);
+                     }
+                  else if(document.getElementById("changing_table").checked == true) {
+                        bathroomList = showChangingTable(bathrooms);
+                      }
+                  }
+
+                  else if($(this).is(":not(:checked)")){
+                  if (document.getElementById("accessible").checked == true &&
+                  document.getElementById("changing_table").checked == true){
+                    bathroomList = showAccessible_ChangingTable(bathrooms);
+                  }
+                  else if (document.getElementById("accessible").checked == true &&
+                  document.getElementById("unisex").checked == true){
+                    bathroomList = showUnisex_Accessible(bathrooms);
+                  }
+                  else if (document.getElementById("unisex").checked == true &&
+                  document.getElementById("changing_table").checked == true){
+                    bathroomList = showUnisex_ChangingTable(bathrooms);
+                  }
+                  else if (document.getElementById("accessible").checked == true){
+                    bathroomList = showAccessible(bathrooms);
+                  }
+                  else if (document.getElementById("unisex").checked == true){
+                    bathroomList = showUnisex(bathrooms);
+                  }
+                  else if (document.getElementById("changing_table").checked == true){
                     bathroomList = showChangingTable(bathrooms);
                   }
-              }
-              else if($(this).is(":not(:checked)")){
-              if (document.getElementById("accessible").checked == true &&
-              document.getElementById("changing_table").checked == true){
-                bathroomList = showAccessible_ChangingTable(bathrooms);
-              }
-              else if (document.getElementById("accessible").checked == true &&
-              document.getElementById("unisex").checked == true){
-                bathroomList = showUnisex_Accessible(bathrooms);
-              }
-              else if (document.getElementById("unisex").checked == true &&
-              document.getElementById("changing_table").checked == true){
-                bathroomList = showUnisex_ChangingTable(bathrooms);
-              }
-              else if (document.getElementById("accessible").checked == true){
-                bathroomList = showAccessible(bathrooms);
-              }
-              else if (document.getElementById("unisex").checked == true){
-                bathroomList = showUnisex(bathrooms);
-              }
-              else if (document.getElementById("changing_table").checked == true){
-                bathroomList = showChangingTable(bathrooms);
-              }
-              else {
-                bathroomList = listout(bathrooms);
-              }
-           }
-           printTest(bathroomList);
-           initMap(bathroomList);
+                  else {
+                    bathroomList = listout(bathrooms);
+                  }
+               }
+               printTest(bathroomList);
+               initMap(bathroomList);
+            });
         });
-    });
-    function printTest(arr1) {
-        var str = "Original length: " + bathrooms.length + "<br>New length: " + arr1.length + "<br>";
-        for(var i = 0; i < arr1.length; i ++) {
-              str += i + ") Name: " + arr1[i].name + "Id: " + arr1[i].id + "<br>";
-        }
-        document.getElementById("id01").innerHTML = str;
-    }
-    </script>
 
+        function printTest(arr1) {
+            var str = "Original length: " + bathrooms.length + "<br>New length: " + arr1.length + "<br>";
+            for(var i = 0; i < arr1.length; i ++) {
+                  str += i + ") Name: " + arr1[i].name + "Id: " + arr1[i].id + "<br>";
+            }
+            document.getElementById("id01").innerHTML = str;
+        }
+        </script>
+
+    <script type="text/javascript">
+    </script>
     <p id="demo"></p>
     <div id="map" ></div>
+    <script src="bathroomList.js"></script>
+    <script src="bathroom_map.js"></script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMwYbU5tgheDwzUtKQEUz_TBz-DU2GlTg&callback=initMap">
     </script>
     <div id="id01">Hello</div>
+
   </body>
+</div>
 </html>
