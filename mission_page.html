@@ -1,14 +1,26 @@
 <!DOCTYPE html>
 <html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>The Resources We Used</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/CSS" href="website_style.css">
-  <body id=pride>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <title>Our Mission</title>
+    <link rel="stylesheet" type="text/CSS" href="website_style.css">
+    <script src="javascript.js"></script>
+
+  </head>
+
+  <body id=pride>
 
     <!--navigation bar-->
     <ul>
@@ -20,45 +32,79 @@
 
     </ul>
 
-    <div class="container">
-  <h2 id=bigTitle>Resources Used</h2>
-  <p> Click on each panel to find out more inforation on each resource.</p>
-  <div class="panel-group" id="accordion">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Google Maps API</a>
-        </h4>
+    <!--content-->
+    <h1 id=bigTitle> Our Mission </h1>
+    <h2 class="headings"> It's important to include people of all communities. Learn some more about the communites our website reaches out to. </h2>
+
+    <!--
+    <div class="container-fluid">
+      <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Learn more about me!
+        <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+          <li><a href="#">A Short Bio</a></li>
+          <li><a href="#">Fun Facts</a></li>
+        </ul>
       </div>
-      <div id="collapse1" class="panel-collapse collapse in">
-        <div class="panel-body">The link that helped us create a map for our website is: https://developers.google.com/maps/documentation/javascript/ . We followed geocoding and geolocation tutorials from the Google API to find the user's location.</div>
+    -->
+
+      <!--accordian collapsible-->
+      <div class="panel-group" id="accordion">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" id=blurb_title>Transgender</a>
+            </h4>
+          </div>
+          <div id="collapse1" class="panel-collapse collapse in">
+            <div class="panel-body" id=blurbs>Transgender people have a gender identity or gender expression different from their assigned sex (which is identified at birth). The term "transgender" is often referred to as an umbrella term, as it encompasses people who are non-binary, meaning that they are not expressively feminine or masculine, as well as people who are genderqueer or genderfluid, meaning that they identify with neither, both, or a combination of male and female genders.
+              <br>
+            <br>
+            Members of the transgender community often have trouble finding a restroom that makes them feel welcome. We hope our website will help more people find more safe bathrooms for their needs.</div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapse2" id=blurb_title>Physically Disabled</a>
+            </h4>
+          </div>
+          <div id="collapse2" class="panel-collapse collapse">
+            <div class="panel-body" id=blurbs> People who are physically disabled generally have a limitation on their physical functioning, mobility, dexterity (flexibility), or stamina. Prenatal disabilities are acquired before birth, while post-natal disabilities are acquired after birth. Perinatal disabilities are acquired any time between a few weeks before to a few weeks after birth.
+              <br>
+            Mobility, visual, and hearing impairments are all types of physical disabilities.
+            <br>
+          <br>
+            With our website, members of the physically disabled community can easily locate a nearby bathroom that conforms to their needs. These bathrooms have grab rail supports and various other features designed to make things easier.</div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapse3" id=blurb_title>Parents of Babies</a>
+            </h4>
+          </div>
+          <div id="collapse3" class="panel-collapse collapse">
+            <div class="panel-body" id=blurbs>"Behind every young child who believes in himself is a parent who believed first"
+              <br>
+            -anonymous
+            <br>
+          <br>
+          There's no doubt that parents are a vital part of our community. Parents are responsible for raising each new generation that comes into our world!
+          <br>
+        <br>
+          Unfortunately, many parents have trouble finding a nearby safe and sanitary place to change their children's diapers. The goal of our website is to make the lives parents all over a bit easier, by providing a service that quickly finds a nearby restrooms with changing tables.
+
       </div>
-    </div>
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Refuge Restrooms public API</a>
-        </h4>
-      </div>
-      <div id="collapse2" class="panel-collapse collapse">
-        <div class="panel-body">The link for the Refuge restrooms public API is: http://www.refugerestrooms.org/api/docs/#!/restrooms . This API helped us<br> find the locations of bathrooms in the US.</div>
+          </div>
+        </div>
       </div>
     </div>
 
-    </div>
-  </div>
-</div>
 
-<style>
-body {
-  background-color: #78C768;
-    font-family: serif;
-    font-size: 20px;
-}
-p {
-  font-size: 20px;
-}
-</style>
+    <p id="paragraph">  </p>
+
+
   </body>
 
 </html>
