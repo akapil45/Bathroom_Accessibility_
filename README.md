@@ -6,7 +6,7 @@ We wanted to tackle the issue of the lack of esy access to bathrooms that tailor
 ## Functions
  Creates a map centered at your location
  
- Nearby bathrooms show up as red markers with pop up infow .
+ Nearby bathrooms show up as red markers with pop up infowindow.
  
  Checkboxes allow users to filter which bathrooms show up based on whether or not they are unisex, accessible and/or has a diaper changing table.
  
@@ -15,9 +15,13 @@ We wanted to tackle the issue of the lack of esy access to bathrooms that tailor
  Other pages include: Bathroom Database, Our Mission, Submit a New Bathroom, About Us, and Resources Used.
 ## API Reference
  Google Maps API
+ 
  Google Geolocation API
+ 
  Google Geocoding API
+ 
  REFUGE Public API
+ 
 ## Languages Used
  CSS, HTML, Javascript, and JQuery
 ## Creators
