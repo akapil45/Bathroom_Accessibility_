@@ -26,4 +26,4 @@ We wanted to tackle the issue of the lack of esy access to bathrooms that tailor
  CSS, HTML, Javascript, and JQuery
 ## Creators
  Arshia Kapil, Brenna Chen, Michelle Huang
-## Installation
+
