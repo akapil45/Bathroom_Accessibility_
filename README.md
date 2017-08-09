@@ -1,5 +1,5 @@
 # Bathroom_Accessibility_
-## What this website does
+## Bathroom Finder
  A website that locates nearby bathrooms based on user specifications through checkboxes.
 ## Motivation
 We wanted to tackle the issue of the lack of esy access to bathrooms that tailor to the needs of certain communities.
