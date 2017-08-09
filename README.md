@@ -1,8 +1,8 @@
 # Bathroom_Accessibility_
 ## What this website does
-### A website that locates nearby bathrooms based on user specifications through checkboxes.
+ A website that locates nearby bathrooms based on user specifications through checkboxes.
 ## Motivation
-### We wanted to tackle the issue of the lack of esy access to bathrooms that tailor to the needs of certain communities.
+We wanted to tackle the issue of the lack of esy access to bathrooms that tailor to the needs of certain communities.
 ## Functions
 ### Creates a map centered at your location
 ### Nearby bathrooms show up as red markers with pop up infow windows
